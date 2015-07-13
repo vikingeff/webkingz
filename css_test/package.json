@@ -1,0 +1,14 @@
+{
+  "name": "frontend-42",
+  "version": "1.0.0",
+  "description": "Homework to learn how to write html/css",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Julien Léger",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.13.1"
+  }
+}
