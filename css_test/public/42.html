@@ -9,21 +9,38 @@
   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css">
 
   <link rel="stylesheet" href="assets/css/42.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
+  <script src="jquery.localscroll.js" type="text/javascript"></script>
+  <script src="jquery.scrollTo.js" type="text/javascript"></script> 
+  <script type="text/javascript">
+  $(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+  </script>
 </head>
 <body>
-  <header class="jumbotron">
+  <header id="nav" class="jumbotron">
     <img src="images/blurry_blue_background.jpg" alt="">
     <div class="inner">
       <p id="logo">Spectral</p>
       <p id="baseline">Lorem ipsum dolor sit <a href="http://www.google.fr">amet</a>.</p>
       <p><a href="" class="btn">Activate</a></p>
     </div>
-    
-      <a href="#one">Learn More</a>
-    
+    <a href="#one">Learn More</a>
   </header>
-  <main>
-    <section id="one">
+  <main id="one">
+    <section>
       <header class>
         <h1>Lorem ipsum dolor sit amet</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid fuga commodi error, quidem et odio nihil est! Adipisci, eaque iure asperiores iusto dolores impedit, doloremque quae, quaerat inventore quis repellendus?</p>
